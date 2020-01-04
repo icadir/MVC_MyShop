@@ -8,6 +8,7 @@ using MyShop.Core.Contracts;
 using MyShop.Core.Models;
 using MyShop.Core.ViewModels;
 using MyShop.DataAccess.InMemory;
+
 namespace MyShop.WebUI.Controllers
 {
     public class ProductManagerController : Controller
