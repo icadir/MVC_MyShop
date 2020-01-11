@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using MyShop.Core.Contracts;
 using MyShop.Core.Models;
 using MyShop.Core.ViewModels;
@@ -27,6 +28,22 @@ namespace MyShop.Services
                 });
             }
             _orderContext.Insert(baseOrder);
+            _orderContext.Commit();
+        }
+
+        public List<Order> GetOrderList()
+        {
+            return _orderContext.Collection().ToList();
+        }
+
+        public Order GetOrder(string Id)
+        {
+            return _orderContext.Find(Id);
+        }
+
+        public void UpdateOrder(Order updateOrder)
+        {
+            _orderContext.Update(updateOrder);
             _orderContext.Commit();
         }
     }
